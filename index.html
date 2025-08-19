@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Plan for Online Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#073B4C] mb-2">Comprehensive Cost Plan</h1>
+            <p class="text-lg text-[#118AB2]">For Your Online Test Portal & Course Platform</p>
+        </header>
+
+        <main>
+            <section id="overall-summary" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">📊 Estimated Total Monthly Costs</h2>
+                <div class="bg-gradient-to-r from-[#118AB2] to-[#06D6A0] text-white rounded-lg shadow-xl p-8 text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Total Estimated Fixed Monthly Cost (Example Scenario)</h3>
+                    <p class="text-5xl font-extrabold mb-4">~₹61,719</p>
+                    <p class="text-lg">This estimate is for a scenario including team-level AI tools, core platform services with a dedicated MongoDB cluster, and team video conferencing. Cloud infrastructure and payment gateway costs are variable and depend heavily on usage and revenue.</p>
+                </div>
+            </section>
+
+            <section id="ai-tools" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">🤖 AI-Powered Development Tools</h2>
+                <p class="text-center text-gray-700 mb-8">AI development tools significantly boost efficiency by accelerating coding and content creation. Most offer a free tier for basic use, a 'Pro' plan for individuals, and a 'Teams' plan for collaborative development with centralized billing.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">AI Tools Cost Comparison (Pro Plan)</h3>
+                        <div class="chart-container">
+                            <canvas id="aiToolsChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">This chart compares the approximate monthly cost of the 'Pro' or equivalent plan for various AI development tools, providing a clear view of the investment required for individual power users.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Team Scaling & Example Costs</h3>
+                        <p class="text-gray-700">For a team of 5 developers using Team/Pro plans across these AI tools, the estimated monthly cost for this section would be:</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-600">
+                            <li>Windsurf AI Team: 5 users * ₹2,505 = ₹12,525</li>
+                            <li>Cursor.AI Team: 5 users * ₹2,512 = ₹12,560</li>
+                            <li>ChatGPT Team: 5 users * ₹2,099 = ₹10,495</li>
+                            <li>Claude.AI Team: 5 users * ₹2,505 = ₹12,525</li>
+                        </ul>
+                        <p class="mt-4 text-lg font-bold text-[#FF6B6B]">Estimated AI Tools Subtotal: ~₹48,105</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center items-center text-center">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Key Benefits of Paid Plans</h3>
+                        <ul class="list-disc list-inside mt-4 text-gray-600 text-left">
+                            <li>Higher usage limits & priority access.</li>
+                            <li>Advanced features & better model performance.</li>
+                            <li>Centralized billing & admin controls for teams.</li>
+                            <li>Collaboration features for shared projects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="core-services" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">💻 Core Platform Services & Database</h2>
+                <p class="text-center text-gray-700 mb-8">These services form the backbone of your application, handling everything from code hosting and automation to payments and critical data storage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Database Cost Spectrum (MongoDB Atlas)</h3>
+                        <div class="chart-container">
+                            <canvas id="dbCostChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">MongoDB Atlas offers a range of options from a perpetual free tier to powerful dedicated clusters, allowing your database to scale seamlessly with your application's needs.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Service Breakdown & Costs</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">GitHub & GitHub Actions</h4>
+                                <p class="text-sm">Manage your codebase and automate your development workflow. GitHub Team for 5 users is ~₹1,670/month. GitHub Actions Free Tier provides 2,000 minutes/month for private repos. Beyond that, it costs ~₹1.34/minute for Windows runners or ~₹0.67/minute for Linux. Assuming ~2,000 extra Windows minutes: ~₹2,680.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">MongoDB Atlas</h4>
+                                <p class="text-sm">Flexible and scalable database. For an initial dedicated M10 cluster: ~₹4,760/month. Serverless costs are variable based on reads/writes and storage.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Razorpay (Payment Gateway)</h4>
+                                <p class="text-sm">No upfront registration fee of ₹2500 was identified. Costs are primarily transaction-based, starting at ~2% + GST per transaction (varies by payment method). This will scale directly with your platform's revenue.</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-lg font-bold text-[#FF6B6B]">Estimated Core Services Subtotal: ~₹9,110 (Excluding Razorpay variable)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cloud-infra" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">☁️ Cloud Infrastructure</h2>
+                <p class="text-center text-gray-700 mb-8">These foundational services for hosting your application, storing vast amounts of data, and running virtual servers are critical for scalability and reliability.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Storage Cost Comparison (per GB/month)</h3>
+                        <div class="chart-container">
+                            <canvas id="storageCostChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">This chart illustrates the cost per gigabyte for various storage tiers across major cloud providers, helping you choose the most cost-effective solution for your data.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Compute Instances (AWS EC2)</h3>
+                        <p class="text-gray-700">Virtual servers (instances) are the workhorses of your application. Costs vary based on performance requirements (CPU, RAM) and commitment.</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-600">
+                            <li><span class="font-semibold">On-Demand:</span> Pay-per-hour for flexibility. (e.g., a basic t2.micro instance is ~₹0.97/hour).</li>
+                            <li><span class="font-semibold">Reserved Instances:</span> Offer significant discounts (up to 72%) for committing to 1 or 3 years.</li>
+                            <li><span class="font-semibold">Spot Instances:</span> Up to 90% off On-Demand, suitable for fault-tolerant workloads.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Estimated Cloud Infrastructure Subtotal (Variable)</h3>
+                        <p class="text-gray-700 mb-4">Cloud infrastructure costs are highly variable based on actual usage (data stored, processed, transferred, compute hours). A starting monthly cost for a basic setup (storage + minimal compute) could range from:</p>
+                        <p class="text-4xl font-bold text-[#FFD166]">~₹5,000 - ₹15,000+</p>
+                        <p class="text-gray-600 mt-2">per month (scales with usage)</p>
+                        <p class="mt-4 text-sm text-gray-600">All major cloud providers (AWS, Google Cloud, Azure) offer generous **free tiers** for new customers, allowing you to build and test with minimal initial investment.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="apis" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">🗺️ APIs (Google Maps Platform)</h2>
+                <p class="text-center text-gray-700 mb-8">APIs like Google Maps enable location-based features, which can be crucial for an online test portal (e.g., for user location, nearest centers). Pricing is typically usage-based after a free tier.</p>
+                <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Free Monthly Usage & Credits</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <p class="text-4xl font-bold text-[#FFD166]">10,000</p>
+                            <p class="text-gray-600">Dynamic Map Loads</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-[#FFD166]">70,000</p>
+                            <p class="text-gray-600">Geocoding API Requests</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-[#FFD166]">70,000</p>
+                            <p class="text-gray-600">Places API Requests</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-center text-base text-gray-600">Google Maps Platform offers a generous free tier, backed by a recurring **$200 USD (~₹16,700) monthly credit** that covers the needs of most small to medium-sized applications. Heavy usage beyond this credit will incur per-request costs.</p>
+                </div>
+            </section>
+
+            <section id="video-conferencing">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-8">📞 Video Conferencing for Live Sessions</h2>
+                <p class="text-center text-gray-700 mb-8">Choosing the right video conferencing tool is crucial for delivering high-quality live classes, webinars, and team meetings. Options range from free tiers to comprehensive business plans.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Zoom Plans & Participant Limits</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Free Plan</h4>
+                                <p class="text-sm">Up to 100 participants, 40-minute limit for group meetings.</p>
+                                <p class="text-sm font-bold text-[#06D6A0]">Cost: ₹0</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Pro Plan</h4>
+                                <p class="text-sm">Up to 100 participants, 30-hour meeting limit, 5GB cloud storage.</p>
+                                <p class="text-sm font-bold text-[#FFD166]">Cost: ~₹1,376 per license/month</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Business Plan</h4>
+                                <p class="text-sm">Up to 300 participants, managed domains, company branding (minimum 10 users).</p>
+                                <p class="text-sm font-bold text-[#FF6B6B]">Cost: ~₹1,999 per license/month</p>
+                            </div>
+                            <p class="mt-4 text-sm text-gray-600">Large Meetings Add-on can increase capacity to 500 or 1,000 participants for additional fees.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Google Meet Plans & Participant Limits</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Free Plan</h4>
+                                <p class="text-sm">Up to 100 participants, 60-minute meeting limit (with Google Account).</p>
+                                <p class="text-sm font-bold text-[#06D6A0]">Cost: ₹0</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Workspace Business Starter</h4>
+                                <p class="text-sm">Up to 100 participants, custom email, 30GB cloud storage.</p>
+                                <p class="text-sm font-bold text-[#FFD166]">Cost: ~$6 per user/month (approx. ₹501 per user/month)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Workspace Business Standard</h4>
+                                <p class="text-sm">Up to 150 participants, meeting recording, 2TB pooled storage.</p>
+                                <p class="text-sm font-bold text-[#FF6B6B]">Cost: ~$12 per user/month (approx. ₹1,002 per user/month)</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">Google Workspace offers higher tiers for more participants and advanced features.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Estimated Video Conferencing Subtotal (Example)</h3>
+                        <p class="text-gray-700 mb-4">For a scenario with 1 Zoom Business license and 5 Google Workspace Business Starter users:</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-600">
+                            <li>Zoom Business (1 license): ~₹1,999</li>
+                            <li>Google Workspace Business Starter (5 users): 5 * ~₹501 = ~₹2,505</li>
+                        </ul>
+                        <p class="mt-4 text-lg font-bold text-[#FF6B6B]">Estimated Video Conferencing Subtotal: ~₹4,504</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-sm text-gray-500">
+            <p>This infographic provides an estimated cost plan. Prices are approximate and subject to change. Please consult the official websites for the most up-to-date information.</p>
+        </footer>
+    </div>
+
+    <script>
+        const wrapText = (text, maxLength) => {
+            if (text.length <= maxLength) {
+                return text;
+            }
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const energeticAndPlayful = {
+            red: '#FF6B6B',
+            yellow: '#FFD166',
+            green: '#06D6A0',
+            blue: '#118AB2',
+            darkBlue: '#073B4C'
+        };
+
+        new Chart(document.getElementById('aiToolsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Windsurf AI', 'Cursor.AI', 'ChatGPT Plus', 'Claude.AI'],
+                datasets: [{
+                    label: 'Approximate Monthly Cost (INR)',
+                    data: [1253, 1670, 1999, 1670],
+                    backgroundColor: [energeticAndPlayful.red, energeticAndPlayful.yellow, energeticAndPlayful.green, energeticAndPlayful.blue],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '₹' + value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('dbCostChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Free Tier (M0)', 'Shared (M2)', 'Shared (M5)', 'Dedicated (M10+)'],
+                datasets: [{
+                    data: [0, 752, 2088, 4760],
+                    backgroundColor: [energeticAndPlayful.green, energeticAndPlayful.yellow, energeticAndPlayful.red, energeticAndPlayful.blue],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(context.parsed);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        const storageLabels = [
+            'AWS S3 Standard',
+            'AWS S3 Glacier Deep Archive',
+            'Google Cloud Standard',
+            'Google Cloud Nearline',
+            'Azure Blob Hot',
+            'Azure Blob Cool'
+        ].map(label => wrapText(label, 16));
+
+        new Chart(document.getElementById('storageCostChart'), {
+            type: 'bar',
+            data: {
+                labels: storageLabels,
+                datasets: [{
+                    label: 'Cost per GB/month (INR)',
+                    data: [1.92, 0.08, 1.67, 0.84, 1.92, 1.09],
+                    backgroundColor: [energeticAndPlayful.red, energeticAndPlayful.darkBlue, energeticAndPlayful.yellow, energeticAndPlayful.blue, energeticAndPlayful.green, energeticAndPlayful.red],
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '₹' + value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Removed the videoConfChart (pie chart) as it was not informative enough
+        // and replaced with explicit text detailing Zoom and Google Meet plans.
+    </script>
+</body>
+</html>
